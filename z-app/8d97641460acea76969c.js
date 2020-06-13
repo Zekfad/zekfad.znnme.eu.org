@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{168:function(e,t,o){"use strict";o.r(t),t.default={meta:{titleTemplate:"%s - Ярослав Воробьев"},pages:{home:{meta:{title:"Главная",description:"Главная страница личного веб сайта Ярослава Воробьева."}}},helloWorld:"Привет мир!"}}}]);

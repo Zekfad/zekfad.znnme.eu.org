@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{113:function(e,o,t){"use strict";t.r(o),o.default={meta:{titleTemplate:"%s - Yaroslav Vorobev"},pages:{home:{meta:{title:"Homepage",description:"Zekfad's landing website homepage."}}},helloWorld:"Hello world!"}}}]);
