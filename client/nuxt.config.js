@@ -22,7 +22,7 @@ export default {
 		host: process.env.FRONTEND_HOST || '0.0.0.0',
 	},
 	srcDir  : '',
-	buildDir: 'dist',
+	buildDir: '../dist',
 	modern  : true,
 	build   : {
 		extend(config, ctx) {
