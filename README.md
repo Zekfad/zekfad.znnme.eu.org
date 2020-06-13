@@ -1,11 +1,13 @@
-# Fuzzy Enigma
+# zekfad.znnnme.eu.org
+
+This is source for my landing website.
 
 > Developer note:
 > Tested only with `yarn`
-> Use `yarn install` to reproduce workspace.
+> Use `yarn install` to reproduce development workspace.
 
-## Code structure
+Nuxt app source is located under `client` folder.
 
-### Client
+Production build for deploy will be generated under `client/dist` folder.
 
-Client Vue app source is located under `client` folder.
+Feel free to fork and/or contribute to this project.
