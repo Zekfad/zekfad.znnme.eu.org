@@ -1,10 +1,18 @@
 export default {
-	globalName: 'Zekfad',
+	globalName: 'App',
 	globals   : {
 		id     : 'app',
 		nuxt   : '$app',
 		context: 'APP',
 	},
+	router: {
+		linkActiveClass     : 'link__active',
+		linkExactActiveClass: 'link__active-exact',
+		linkPrefetchedClass : 'link__prefetched',
+	},
+	loading         : false,
+	loadingIndicator: false,
+
 	head: {
 		titleTemplate: '%s - Yaroslav Vorobev',
 
