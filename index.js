@@ -35,7 +35,7 @@ switch (page) {
 			'',
 			'yarn dev      - run development server',
 			'yarn generate - generate static build',
-			'yarn deploy   - deploy ./dist to remote gh-pages branch',
+			'yarn deploy   - deploy ./client/dist to remote gh-pages branch',
 			'',
 			'Take a look at dev help page, to learn about environmental variables.'
 		);
