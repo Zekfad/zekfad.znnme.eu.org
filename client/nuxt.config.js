@@ -62,6 +62,7 @@ export default {
 			},
 		},
 		publicPath: '/z-app/',
+		extractCSS: true,
 	},
 	plugins: [ '~/plugins/vue-window-size', ],
 	modules: [
