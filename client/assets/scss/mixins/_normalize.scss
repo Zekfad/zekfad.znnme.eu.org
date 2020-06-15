@@ -1,7 +1,0 @@
-@mixin normalize($list-fix: false) {
-	margin: 0;
-	padding: 0;
-	@if $list-fix {
-		list-style-type: none;
-	}
-}
