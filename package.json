@@ -21,7 +21,7 @@
 		"help:dev": "node index.js dev",
 		"dev": "nuxt dev ./client",
 		"generate": "nuxt generate ./client",
-		"deploy": "push-dir --dir=client/dist --branch=gh-pages --cleanup"
+		"deploy": "push-dir --dir=client/dist --branch=gh-pages --cleanup --verbose"
 	},
 	"main": "server.js",
 	"devDependencies": {
