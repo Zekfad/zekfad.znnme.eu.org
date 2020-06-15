@@ -69,8 +69,9 @@ export default {
 		'@nuxtjs/style-resources',
 		'nuxt-i18n',
 		'vue-scrollto/nuxt',
-		'nuxt-fontawesome',
 	],
+	buildModules: [ '@nuxtjs/fontawesome', ],
+
 	i18n: {
 		defaultLocale: 'en',
 		vueI18n      : { fallbackLocale: 'en', },
