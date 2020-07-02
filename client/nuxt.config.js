@@ -35,7 +35,7 @@ export default {
 	},
 	srcDir  : '',
 	buildDir: '../dist',
-	modern  : true,
+	modern  : 'client',
 	build   : {
 		extend(config, ctx) {
 			if (ctx.isDev) {
