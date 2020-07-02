@@ -51,9 +51,9 @@ export default {
 		babel: {
 			presets({ envName, }) {
 				const envTargets = {
-					client: { browsers: [ '> 1%, not dead', ], ie: 11, },
+					client: { browsers: [ '>0.25%, not dead', ], },
 					server: { node: 'current', },
-					modern: { browsers: [ 'last 2 versions, not dead', ], },
+					modern: { browsers: [ '>0.25%, not ie 11, not op_mini all, not dead', ], },
 				};
 				return [
 					[
