@@ -1,3 +1,7 @@
+import Sass from 'sass';
+import Fiber from 'fibers';
+import SassPackageImporter from 'node-sass-package-importer';
+
 export default {
 	globalName: 'App',
 	globals   : {
@@ -63,6 +67,15 @@ export default {
 		},
 		publicPath: '/z-app/',
 		extractCSS: true,
+		loaders   : {
+			scss: {
+				implementation: Sass,
+				sassOptions   : {
+					fiber   : Fiber,
+					importer: SassPackageImporter,
+				},
+			},
+		},
 	},
 	plugins: [ '~/plugins/vue-window-size', ],
 	modules: [
