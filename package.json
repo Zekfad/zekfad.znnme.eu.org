@@ -20,6 +20,7 @@
 		"help": "node index.js help",
 		"help:dev": "node index.js dev",
 		"dev": "nuxt dev ./client",
+		"build": "yarn generate",
 		"generate": "nuxt generate ./client",
 		"analyze": "nuxt build ./client --analyze",
 		"deploy": "push-dir --dir=client/dist --branch=gh-pages --cleanup --verbose"
