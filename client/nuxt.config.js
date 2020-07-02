@@ -51,15 +51,17 @@ export default {
 		babel: {
 			presets({ envName, }) {
 				const envTargets = {
-					client: { browsers: [ '> 0.25%, not dead', ], ie: 11, },
+					client: { browsers: [ '> 1%, not dead', ], ie: 11, },
 					server: { node: 'current', },
+					modern: { browsers: [ 'last 2 versions, not dead', ], },
 				};
 				return [
 					[
 						'@nuxt/babel-preset-app',
 						{
-							targets: envTargets[envName],
-							corejs : { version: 3, },
+							targets : envTargets[envName],
+							corejs  : { version: 3, },
+							bugfixes: true,
 						},
 					],
 				];
