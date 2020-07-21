@@ -82,6 +82,7 @@ export default {
 	},
 	plugins: [
 		'~/plugins/vue-window-size',
+		'~/plugins/vue-clipboard2',
 		'~/plugins/v-tooltip.js',
 	],
 	modules: [
