@@ -69,7 +69,7 @@ export default {
 			},
 		},
 		publicPath: '/z-app/',
-		extractCSS: true,
+		extractCSS: !(/^dev.*/).test(process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase()),
 		loaders   : {
 			scss: {
 				implementation: Sass,
