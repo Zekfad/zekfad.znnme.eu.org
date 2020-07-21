@@ -111,11 +111,7 @@ export default {
 		],
 	},
 	styleResources: {
-		scss: [
-			'~/assets/scss/mixins/_all.scss',
-			'~/assets/scss/constants/_all.scss',
-			'~/assets/scss/fonts/_all.scss',
-		],
+		scss: [ '~/assets/scss/imports/_all.scss', ],
 	},
 	fontawesome: {
 		component: 'Fa',
