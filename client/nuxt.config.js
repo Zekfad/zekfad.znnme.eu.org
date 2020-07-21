@@ -80,7 +80,10 @@ export default {
 			},
 		},
 	},
-	plugins: [ '~/plugins/vue-window-size', ],
+	plugins: [
+		'~/plugins/vue-window-size',
+		'~/plugins/v-tooltip.js',
+	],
 	modules: [
 		'@nuxtjs/style-resources',
 		'nuxt-i18n',

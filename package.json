@@ -59,6 +59,7 @@
 		"push-dir": "^0.4.1",
 		"sass": "^1.26.10",
 		"sass-loader": "^9.0.2",
+		"v-tooltip": "^2.0.3",
 		"vue": "2.6.11",
 		"vue-clickaway": "^2.2.2",
 		"vue-i18n": "^8.18.2",
