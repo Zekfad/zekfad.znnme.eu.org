@@ -115,6 +115,14 @@ export default {
 		],
 	},
 	fontawesome: {
+		component: 'Fa',
+		suffix   : true,
+
+		addCss: false,
+
+		useLayers    : false,
+		useLayersText: false,
+
 		icons: {
 			solid  : [],
 			regular: [],
