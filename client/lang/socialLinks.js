@@ -9,10 +9,20 @@ export default {
 		tag          : 'zaxiwise',
 		discriminator: '2815',
 	},
+	email: {
+		title: 'Personal E-mail',
+		url  : 'mailto:zekfad@znnme.eu.org',
+		text : 'E-mail',
+	},
 	github: {
 		title: 'Personal GitHub account',
 		url  : 'https://github.com/Zekfad',
 		text : 'GitHub',
+	},
+	steam: {
+		title: 'Personal Steam account',
+		url  : 'https://steamcommunity.com/id/zekfad',
+		text : 'Steam',
 	},
 	telegram: {
 		title: 'Personal Telegram account',

@@ -45,8 +45,14 @@ export default {
 		discord: {
 			title: 'Личный аккаунт Discord',
 		},
+		email: {
+			title: 'Личный E-mail',
+		},
 		github: {
 			title: 'Личный аккаунт GitHub',
+		},
+		steam: {
+			title: 'Личный аккаунт Steam',
 		},
 		telegram: {
 			title: 'Личный аккаунт Telegram',
