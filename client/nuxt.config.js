@@ -84,6 +84,7 @@ export default {
 		'~/plugins/vue-window-size',
 		'~/plugins/vue-clipboard2',
 		'~/plugins/v-tooltip.js',
+		'~/plugins/v-twemoji.js',
 	],
 	modules: [
 		'@nuxtjs/style-resources',
