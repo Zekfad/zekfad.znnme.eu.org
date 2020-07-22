@@ -1,3 +1,5 @@
+import socialLinks from './socialLinks';
+
 export default {
 	meta: {
 		titleTemplate: '%s - Yaroslav Vorobev',
@@ -27,5 +29,13 @@ export default {
 			},
 		},
 	},
-	helloWorld: 'Hello world!',
+	tooltips: {
+		click: {
+			copy: 'Copy',
+			open: 'Open',
+		},
+		copied   : 'Copied',
+		copyError: 'Can\'t copy!',
+	},
+	socialLinks,
 };

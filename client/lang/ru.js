@@ -1,3 +1,6 @@
+import socialLinks from './socialLinks';
+import { cloneDeep, merge, } from 'lodash';
+
 export default {
 	meta: {
 		titleTemplate: '%s - Ярослав Воробьев',
@@ -27,5 +30,30 @@ export default {
 			},
 		},
 	},
-	helloWorld: 'Привет мир!',
+	tooltips: {
+		click: {
+			copy: 'Скопировать',
+			open: 'Открыть',
+		},
+		copied   : 'Скопировано!',
+		copyError: 'Ошибка при копировании!',
+	},
+	socialLinks: merge(cloneDeep(socialLinks), {
+		battleNet: {
+			title: 'Личный аккаунт Battle.net',
+		},
+		discord: {
+			title: 'Личный аккаунт Discord',
+		},
+		github: {
+			title: 'Личный аккаунт GitHub',
+		},
+		telegram: {
+			title: 'Личный аккаунт Telegram',
+		},
+		vk: {
+			title: 'Личный аккаунт ВКонтакте',
+			text : 'ВКонтакте',
+		},
+	}),
 };
