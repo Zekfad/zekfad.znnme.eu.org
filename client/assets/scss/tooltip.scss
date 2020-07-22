@@ -1,14 +1,51 @@
-.tooltip {
-	$tooltip-background-color: #000;
+@mixin tooltip-color-scheme($background-color: #000, $text-color: #fff) {
+	.tooltip-inner {
+		background: $background-color;
+		color: $text-color;
+	}
 
+	.tooltip-arrow {
+		border-color: #0000 #0000 #0000 #0000;
+	}
+
+	&[x-placement^="top"] .tooltip-arrow {
+		border-top-color: $background-color;
+	}
+
+	&[x-placement^="bottom"] .tooltip-arrow {
+		border-bottom-color: $background-color;
+	}
+
+	&[x-placement^="right"] .tooltip-arrow {
+		border-right-color: $background-color;
+	}
+
+	&[x-placement^="left"] .tooltip-arrow {
+		border-left-color: $background-color;
+	}
+}
+
+.tooltip {
 	display: block!important;
 	z-index: 10000;
 
-	.tooltip-inner {
-		background: $tooltip-background-color;
-		color: white;
-		border-radius: 4px;
+	@include tooltip-color-scheme();
+
+	&.green {
+		@include tooltip-color-scheme(#43b581);
+	}
+
+	&.red {
+		@include tooltip-color-scheme(#f04747); 
+	}
+
+	&.small .tooltip-inner {
 		padding: 5px 10px 4px;
+	}
+
+	.tooltip-inner {
+		border-radius: 4px;
+		padding: 10px 12px;
 	}
 
 	.tooltip-arrow {
@@ -17,7 +54,6 @@
 		border-style: solid;
 		position: absolute;
 		margin: 5px;
-		border-color: $tooltip-background-color;
 		z-index: 1;
 	}
 
@@ -26,7 +62,6 @@
 
 		.tooltip-arrow {
 			border-width: 5px 5px 0 5px;
-			border-color: $tooltip-background-color transparent transparent transparent;
 			bottom: -5px;
 			left: calc(50% - 5px);
 			margin-top: 0;
@@ -39,7 +74,6 @@
 
 		.tooltip-arrow {
 			border-width: 0 5px 5px 5px;
-			border-color: transparent transparent transparent $tooltip-background-color;
 			top: -5px;
 			left: calc(50% - 5px);
 			margin-top: 0;
@@ -52,7 +86,6 @@
 
 		.tooltip-arrow {
 			border-width: 5px 5px 5px 0;
-			border-color: transparent $tooltip-background-color transparent transparent;
 			left: -5px;
 			top: calc(50% - 5px);
 			margin-left: 0;
@@ -65,7 +98,6 @@
 
 		.tooltip-arrow {
 			border-width: 5px 0 5px 5px;
-			border-color: transparent transparent transparent $tooltip-background-color;
 			right: -5px;
 			top: calc(50% - 5px);
 			margin-left: 0;
