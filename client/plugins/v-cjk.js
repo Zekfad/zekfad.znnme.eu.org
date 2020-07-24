@@ -50,16 +50,20 @@ try {
 	}]`);
 }
 
-function testRegex(element) {
+function testRegex(element, cache) {
+	if (cache && element.classList.contains('cjk'))
+		return;
 	if (regex.test(element.innerText))
 		element.classList.add('cjk');
 }
 
 Vue.directive('cjk', {
-	inserted(element) {
-		testRegex(element);
+	inserted(element, { modifiers, }) {
+		let cache = !!modifiers?.cached;
+		testRegex(element, cache);
 	},
-	componentUpdated(element) {
-		testRegex(element);
+	componentUpdated(element, { modifiers, }) {
+		let cache = !!modifiers?.cached;
+		testRegex(element, cache);
 	},
 });

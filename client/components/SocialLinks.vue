@@ -1,5 +1,5 @@
 <template>
-	<div v-cjk class="social-links">
+	<div v-cjk.cached class="social-links">
 		<ul class="social-links__list">
 			<li v-for="({ icon, title, link, tag }, index) in links"
 				:key="index"
