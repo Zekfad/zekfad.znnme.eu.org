@@ -48,6 +48,7 @@ export default {
 					? 'source-map'
 					: 'inline-source-map';
 			}
+			config.output.jsonpFunction = 'jsonp';
 		},
 		babel: {
 			presets({ envName, }) {
