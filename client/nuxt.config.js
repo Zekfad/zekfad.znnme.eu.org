@@ -79,6 +79,7 @@ export default {
 				},
 			},
 		},
+		quiet: false,
 	},
 	plugins: [
 		'~/plugins/vue-window-size',

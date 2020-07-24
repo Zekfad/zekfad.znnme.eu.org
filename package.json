@@ -20,7 +20,7 @@
 		"help": "node index.js help",
 		"help:dev": "node index.js dev",
 		"dev": "nuxt dev ./client",
-		"build": "nuxt build ./client ",
+		"build": "nuxt build ./client --fail-on-error",
 		"export": "nuxt export ./client",
 		"analyze": "nuxt build ./client --analyze",
 		"serve": "nuxt serve ./client",
