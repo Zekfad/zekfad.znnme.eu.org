@@ -68,6 +68,10 @@ export default {
 					],
 				];
 			},
+			plugins: [
+				'@babel/plugin-proposal-optional-chaining',
+				'@babel/plugin-proposal-nullish-coalescing-operator',
+			],
 		},
 		publicPath: '/z-app/',
 		extractCSS: !(/^dev.*/).test(process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase()),
