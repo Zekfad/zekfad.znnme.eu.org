@@ -87,6 +87,7 @@ export default {
 		'~/plugins/vue-clipboard2',
 		'~/plugins/v-tooltip.js',
 		'~/plugins/v-twemoji.js',
+		'~/plugins/v-cjk.js',
 	],
 	modules: [
 		'@nuxtjs/style-resources',

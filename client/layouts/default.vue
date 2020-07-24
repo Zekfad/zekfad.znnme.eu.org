@@ -17,10 +17,20 @@ export default {
 </script>
 
 <style lang="scss">
+$sans-serif: 'DejaVu Sans Condensed', sans-serif;
+
 html,
 body {
 	@include normalize;
-	font-family: 'DejaVu Sans Condensed', 'DejaVu Math TeX Gyre', 'Noto Sans CJK JP', sans-serif, 'MS PGothic';
+	font-family: $sans-serif;
+}
+
+.math {
+	font-family: 'DejaVu Math TeX Gyre', $sans-serif;
+}
+
+.cjk {
+	font-family: $sans-serif, 'Noto Sans CJK JP', 'MS PGothic';
 }
 
 .svg-inline--fa {
