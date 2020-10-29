@@ -7,73 +7,31 @@ on:
     branches: [ master, dev ]
 
 jobs:
-  setup:
-    name: Setup workspace
+  build:
+    name: Setup, build and test workspace
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 15.x ]
+        frozen-lockfile: [ true, false ]
+    continue-on-error: ${{ matrix.frozen-lockfile }}
     steps:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Install Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Yarn
       run: npm i -g yarn
-    - name: Workspace cache
-      uses: actions/cache@v1
-      with:
-        path: .
-        key: workflow
-        restore-keys: workflow
-
-  install:
-    name: Install dependencies
-    runs-on: ubuntu-latest
-    needs: setup
-    strategy:
-      matrix:
-        frozen-lockfile: [ true, false ]
-    continue-on-error: ${{ matrix.frozen-lockfile }}
-    steps:
-    - name: Workspace cache
-      uses: actions/cache@v1
-      with:
-        path: .
-        key: workflow
-        restore-keys: workflow
-    - name: Install with frozen lockfile
+    - name: Install dependencies with frozen lockfile
       if: ${{ matrix.frozen-lockfile }}
       run: yarn install --frozen-lockfile
-    - name: Install normally
+    - name: Install dependencies normally
       if: ${{ !matrix.frozen-lockfile }}
       run: yarn install
-
-  build:
-    name: Build project
-    runs-on: ubuntu-latest
-    needs: install
-    steps:
-    - name: Workspace cache
-      uses: actions/cache@v1
-      with:
-        path: .
-        key: workflow
-        restore-keys: workflow
-    - run: yarn build
-
-  generate:
-    name: Generate static build
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-    - name: Workspace cache
-      uses: actions/cache@v1
-      with:
-        path: .
-        key: workflow
-        restore-keys: workflow
-    - run: yarn generate
+    - name: Build project
+      run: yarn build
+    - name: Generate static build
+      run: yarn generate
