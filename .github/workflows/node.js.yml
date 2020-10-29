@@ -6,15 +6,17 @@ on:
   pull_request:
     branches: [ master, dev ]
 
+defaults:
+  runs-on: ubuntu-latest
+  strategy:
+    matrix:
+      node-version: [ 15.x ]
+      frozen-lockfile: [ true, false ]
+    continue-on-error: ${{ matrix.frozen-lockfile }}
+
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [15.x]
-
+  setup:
+    name: Setup workspace
     steps:
     - uses: actions/checkout@v2
       with:
@@ -23,7 +25,28 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm i -g yarn
-    - run: yarn install --frozen-lockfile
+    - name: Install Yarn
+      run: npm i -g yarn
+
+  install:
+    name: Install dependencies
+    needs: setup
+    steps:
+    - name: Install with frozen lockfile
+      if: ${{ matrix.frozen-lockfile }}
+      run: yarn install --frozen-lockfile
+    - name: Install normally
+      if: ${{ !matrix.frozen-lockfile }}
+      run: yarn install
+
+  build:
+    name: Build project
+    needs: install
+    steps:
     - run: yarn build
+
+  generate:
+    name: Generate static build
+    needs: build
+    steps:
     - run: yarn generate
