@@ -10,6 +10,9 @@ jobs:
   setup:
     name: Setup workspace
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 15.x ]
     steps:
     - uses: actions/checkout@v2
       with:
@@ -27,7 +30,6 @@ jobs:
     needs: setup
     strategy:
       matrix:
-        node-version: [ 15.x ]
         frozen-lockfile: [ true, false ]
     continue-on-error: ${{ matrix.frozen-lockfile }}
     steps:
