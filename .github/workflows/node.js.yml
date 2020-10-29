@@ -29,7 +29,7 @@ jobs:
       matrix:
         node-version: [ 15.x ]
         frozen-lockfile: [ true, false ]
-      continue-on-error: ${{ matrix.frozen-lockfile }}
+    continue-on-error: ${{ matrix.frozen-lockfile }}
     steps:
     - name: Install with frozen lockfile
       if: ${{ matrix.frozen-lockfile }}
