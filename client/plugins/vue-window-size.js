@@ -1,4 +1,4 @@
 import Vue from 'vue';
-import VueWindowSize from 'vue-window-size';
+import { VueWindowSizePlugin, } from 'vue-window-size/option-api';
 
-Vue.use(VueWindowSize);
+Vue.use(VueWindowSizePlugin);

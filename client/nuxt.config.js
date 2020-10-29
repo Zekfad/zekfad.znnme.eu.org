@@ -33,7 +33,7 @@ export default {
 		port: process.env.FRONTEND_PORT || 3000,
 		host: process.env.FRONTEND_HOST || '0.0.0.0',
 	},
-	export: {
+	generate: {
 		fallback: '404.html',
 		dir     : 'dist',
 	},
