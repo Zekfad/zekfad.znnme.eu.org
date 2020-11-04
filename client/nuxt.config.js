@@ -1,13 +1,22 @@
 import Sass from 'sass';
 import Fiber from 'fibers';
-import SassPackageImporter from 'node-sass-package-importer';
+
+
+const capitalize = name => {
+	name = name.toLowerCase().split('');
+	name[0] = name[0].toUpperCase();
+	return name.join('');
+};
 
 export default {
 	globalName: 'App',
 	globals   : {
-		id     : 'app',
-		nuxt   : '$app',
-		context: 'APP',
+		id            : globalName => `${globalName.toLowerCase()}`,
+		nuxt          : globalName => `$${globalName.toLowerCase()}`,
+		context       : globalName => `${globalName.toUpperCase()}`,
+		pluginPrefix  : globalName => globalName,
+		readyCallback : globalName => `on${capitalize(globalName)}Ready`,
+		loadedCallback: globalName => `on${capitalize(globalName)}Loaded`,
 	},
 	router: {
 		linkActiveClass     : 'link__active',
@@ -69,8 +78,9 @@ export default {
 				];
 			},
 			plugins: [
-				'@babel/plugin-proposal-optional-chaining',
+				'@babel/plugin-proposal-class-properties',
 				'@babel/plugin-proposal-nullish-coalescing-operator',
+				'@babel/plugin-proposal-optional-chaining',
 			],
 		},
 		publicPath: '/z-app/',
@@ -79,8 +89,7 @@ export default {
 			scss: {
 				implementation: Sass,
 				sassOptions   : {
-					fiber   : Fiber,
-					importer: SassPackageImporter,
+					fiber: Fiber,
 				},
 			},
 		},
@@ -89,17 +98,18 @@ export default {
 	plugins: [
 		'~/plugins/vue-window-size',
 		'~/plugins/vue-clipboard2',
-		'~/plugins/v-tooltip.js',
-		'~/plugins/v-twemoji.js',
-		'~/plugins/v-cjk.js',
+		'~/plugins/v-twemoji',
+		'~/plugins/v-cjk',
 	],
 	modules: [
 		'@nuxtjs/style-resources',
 		'nuxt-i18n',
 		'vue-scrollto/nuxt',
 	],
-	buildModules: [ '@nuxtjs/fontawesome', ],
-
+	buildModules: [
+		'@nuxtjs/composition-api',
+		'@nuxtjs/fontawesome',
+	],
 	i18n: {
 		defaultLocale: 'en',
 		vueI18n      : { fallbackLocale: 'en', },

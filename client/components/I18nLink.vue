@@ -12,9 +12,7 @@ export default {
 			default: '/',
 		},
 	},
-	data() {
-		let attrs = this.$attrs;
-
+	setup(props, { attrs, }) {
 		delete attrs.to;
 
 		return {

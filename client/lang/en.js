@@ -29,13 +29,5 @@ export default {
 			},
 		},
 	},
-	tooltips: {
-		click: {
-			copy: 'Copy',
-			open: 'Open',
-		},
-		copied   : 'Copied',
-		copyError: 'Can\'t copy!',
-	},
 	socialLinks,
 };

@@ -31,14 +31,6 @@ export default {
 			},
 		},
 	},
-	tooltips: {
-		click: {
-			copy: 'Скопировать',
-			open: 'Открыть',
-		},
-		copied   : 'Скопировано!',
-		copyError: 'Ошибка при копировании!',
-	},
 	socialLinks: merge(cloneDeep(socialLinks), {
 		battleNet: {
 			title: 'Личный аккаунт Battle.net',
