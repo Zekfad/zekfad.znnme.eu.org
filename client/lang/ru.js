@@ -1,6 +1,8 @@
-import socialLinks from './socialLinks';
-import merge from 'lodash/merge';
 import cloneDeep from 'lodash/cloneDeep';
+import merge from 'lodash/merge';
+
+import socialLinks from './socialLinks';
+
 
 export default {
 	meta: {

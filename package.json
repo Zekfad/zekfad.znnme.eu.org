@@ -28,6 +28,7 @@
 	},
 	"main": "server.js",
 	"devDependencies": {
+		"@zekfad/eslint-config": "^1.0.0",
 		"babel-eslint": "^10.1.0",
 		"eslint": "^7.12.1",
 		"eslint-import-resolver-nuxt": "^1.0.1",

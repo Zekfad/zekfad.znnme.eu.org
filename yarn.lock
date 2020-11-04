@@ -1650,6 +1650,11 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
+"@zekfad/eslint-config@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@zekfad/eslint-config/-/eslint-config-1.0.0.tgz#83a40eb7526e2a3fdf28875b094b8e95509e4dd3"
+  integrity sha512-rwz0anebPC0Qw+/k2QKDvYqZdkhnaMl4+j+DP5E/aJmVlJvWli5VV7EiV/q61JtcTT+cCGJ9zN2CppwhRp5zMA==
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"

@@ -1,5 +1,6 @@
 import Vue from 'vue';
 
+
 const blocks = [
 	'\u1100-\u11ff', // Hangul Jamo
 	'\u2e80-\u2eff', // CJK Radicals Supplement

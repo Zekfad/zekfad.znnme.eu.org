@@ -1,5 +1,6 @@
 import socialLinks from './socialLinks';
 
+
 export default {
 	meta: {
 		titleTemplate: '%s - Yaroslav Vorobev',

@@ -16,6 +16,7 @@
 import ErrorInfo from '~/components/ErrorInfo';
 import I18nLink from '~/components/I18nLink';
 
+
 export default {
 	components: {
 		ErrorInfo,

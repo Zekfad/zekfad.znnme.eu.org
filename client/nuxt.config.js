@@ -1,5 +1,5 @@
-import Sass from 'sass';
 import Fiber from 'fibers';
+import Sass from 'sass';
 
 
 const capitalize = name => {
