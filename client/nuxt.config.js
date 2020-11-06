@@ -8,11 +8,11 @@ const capitalize = name => {
 };
 
 export default async () => {
-	let Fiber = false;
+	let Fiber = void 0;
 	try {
 		Fiber = await import('fibers');
 	} catch (error) {
-		Fiber = false;
+		Fiber = void 0;
 	}
 
 	return {
@@ -96,7 +96,9 @@ export default async () => {
 				scss: {
 					implementation: Sass,
 					sassOptions   : {
-						fiber: Fiber,
+						...typeof Fiber === 'undefined'
+							? { fiber: Fiber, }
+							: {},
 					},
 				},
 			},
