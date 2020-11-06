@@ -51,3 +51,26 @@ This is the source for [my landing website](https://zekfad.znnme.eu.org).
   ```
 * Manually deploy:
   Grab the files from `/client/dist/`.
+
+### Get help
+
+* Get all help pages:
+  ```shell
+  $ yarn help:all
+  ```
+  or
+  ```shell
+  $ yarn run help
+  ```
+  or (at project root)
+  ```shell
+  $ node .
+  ```
+* Commands help:
+  ```shell
+  $ yarn help:commands
+  ```
+* Environmental variables help:
+  ```shell
+  $ yarn help:vars
+  ```

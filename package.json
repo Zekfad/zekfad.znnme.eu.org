@@ -17,13 +17,15 @@
 	},
 	"scripts": {
 		"lint": "eslint . --ext .js,.mjs,.cjs,.vue",
-		"help": "node index.js help",
-		"help:dev": "node index.js dev",
+		"help": "node index.js all",
+		"help:all": "node index.js all",
+		"help:commands": "node index.js commands",
+		"help:vars": "node index.js vars",
 		"dev": "nuxt dev ./client",
 		"build": "nuxt build ./client --fail-on-error",
 		"generate": "nuxt generate ./client",
-		"analyze": "nuxt build ./client --analyze",
 		"start": "nuxt start ./client",
+		"analyze": "nuxt build ./client --analyze",
 		"deploy": "push-dir --dir=client/dist --branch=gh-pages --cleanup --verbose"
 	},
 	"main": "server.js",

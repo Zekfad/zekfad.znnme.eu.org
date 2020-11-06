@@ -1,46 +1,50 @@
+/**
+ * This is the quick help file.
+ * Web app source is located at `/client/`.
+ */
+
 let { argv, } = process,
 	page = argv.length > 2
 		? argv[2]
-		: 'help';
+		: 'all';
 
-/**
- * Display data to console.
- * @param  {...any} data Data to be displayed.
- * @returns {boolean} Always true.
- */
-function echo(...data) {
-	data.forEach(line => {
-		console.log('' + line);
-	});
-	return true;
+function getHelpPage(page) {
+	switch (page) {
+		case 'vars':
+			return `
+- = Environmental variables help = -
+NUXT_ENV = dev/production - Nuxt application mode.
+
+FRONTEND_HOST = ip/hostname - Nuxt application hostname.
+FRONTEND_PORT = port        - Nuxt application port.
+`.trim();
+		case 'commands':
+			return `
+- = Commands help = - ',
+yarn run help      - get all help pages.
+yarn help:commands - get commands help page.
+yarn help:vars     - get environmental variables help page.
+
+yarn lint     - run eslint for project files.
+
+yarn dev      - run development server with hot reload.
+yarn build    - create static build for static generation.
+yarn generate - generate static files for deployment.
+yarn start    - serve generated static build.
+
+yarn analyze  - create analyze build.
+yarn deploy   - deploy ./client/dist to remote gh-pages branch.
+`.trim();
+		case 'all':
+		default:
+			return `
+${getHelpPage('commands')}
+
+${getHelpPage('vars')}
+`.trim();
+	}
 }
 
-switch (page) {
-	case 'dev':
-		echo(
-			' - = Dev help = - ',
-			' - Environmental variables -',
-			'NUXT_ENV = dev/production - Nuxt mode',
-			'',
-			'FRONTEND_HOST = ip/hostname - Nuxt application hostname',
-			'FRONTEND_PORT = port        - Nuxt application port'
-		);
-		break;
-	case 'help':
-	default:
-		echo(
-			' - = Help = - ',
-			'yarn run help     - this help page',
-			'yarn run help:dev - dev help page',
-			'',
-			'yarn dev      - run development server',
-			'yarn generate - generate static build',
-			'yarn deploy   - deploy ./client/dist to remote gh-pages branch',
-			'yarn analyze  - analyze build',
-			'',
-			'Take a look at dev help page, to learn about environmental variables.'
-		);
-		break;
-}
+console.log(getHelpPage(page));
 
 process.exit(0);
