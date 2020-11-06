@@ -1,13 +1,53 @@
 # zekfad.znnnme.eu.org
 
-This is source for my landing website.
+This is the source for [my landing website](https://zekfad.znnme.eu.org).
 
-> Developer note:
-> Tested only with `yarn`
-> Use `yarn install` to reproduce development workspace.
+## Develop
 
-Nuxt app source is located under `client` folder.
+### Prepare workspace
 
-Production build for deploy will be generated under `client/dist` folder.
+* Clone repo **with submodules**:
+  ```shell
+  $ git clone --recurse-submodules https://github.com/Zekfad/zekfad.znnme.eu.org.git
+  ```
+* **Use `yarn`**.
+* Install dependencies one of the following ways:
+  * Reproduce my workspace:
+    ```shell
+    $ yarn install --frozen-lockfile
+    ```
+  * Create clean new workspace (without native dependencies):
+    ```shell
+    $ yarn install --ignore-optional
+    ```
+  * Create clean new workspace (with native dependencies):
+    ```shell
+    $ yarn install
+    ```
 
-Feel free to fork and/or contribute to this project.
+### Edit source
+
+* `/`
+  * `client/` - Nuxt web app source is here.
+    * `dist/` - Ready to deploy static web app will be built here.
+	* `assets/scss/utils/scss-utils/` - [scss-utils](https://github.com/Zekfad/scss-utils) submodule. **Remember to clone it**.
+
+### Build
+
+* Build Nuxt app:
+  ```shell
+  $ yarn build
+  ```
+* Generate static files:
+  ```shell
+  $ yarn generate
+  ```
+
+### Deploy
+
+* Deploy to `gh-pages` branch (force push):
+  ```shell
+  $ yarn deploy
+  ```
+* Manually deploy:
+  Grab the files from `/client/dist/`.
