@@ -14,7 +14,7 @@ jobs:
       matrix:
         node-version: [ 15.x ]
         frozen-lockfile: [ true, false ]
-    continue-on-error: ${{ matrix.frozen-lockfile }}
+    continue-on-error: true
     steps:
     - uses: actions/checkout@v2
       with:
@@ -28,9 +28,9 @@ jobs:
     - name: Install dependencies with frozen lockfile
       if: ${{ matrix.frozen-lockfile }}
       run: yarn install --frozen-lockfile
-    - name: Install dependencies normally
+    - name: Install dependencies without optional
       if: ${{ !matrix.frozen-lockfile }}
-      run: yarn install
+      run: yarn install --ignore-optional
     - name: Build project
       run: yarn build
     - name: Generate static build
