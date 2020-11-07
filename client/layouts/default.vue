@@ -17,12 +17,18 @@ export default {
 </script>
 
 <style lang="scss">
-$sans-serif: 'DejaVu Sans Condensed', sans-serif;
+$sans-serif: Helvetica, 'DejaVu Sans Condensed', sans-serif;
 
 html,
 body {
 	@include normalize;
 	font-family: $sans-serif;
+	background-color: $color-dark;
+	color: $color-text-accent;
+}
+
+:focus {
+	outline: unset;
 }
 
 .math {
@@ -43,4 +49,13 @@ img.emoji {
 	margin: 0 .05em 0 .1em;
 	vertical-align: -0.15em;
 }
+
+a {
+	color: $color-link;
+
+	&:hover {
+		color: $color-link-light;
+	}
+}
+
 </style>
