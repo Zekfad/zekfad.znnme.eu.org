@@ -55,7 +55,7 @@
 		"@nuxtjs/fontawesome": "^1.1.2",
 		"@nuxtjs/style-resources": "^1.0.0",
 		"dart-sass": "^1.25.0",
-		"lodash": "^4.17.20",
+		"lodash": "^4.17.21",
 		"nuxt": "^2.14.7",
 		"nuxt-i18n": "^6.15.4",
 		"push-dir": "^0.4.1",
